@@ -4,7 +4,7 @@ import subprocess
 from bpy import context
 
 bl_info = {
-    "name": "Brender Mof Bridge",
+    "name": "Blender Mof Bridge",
     "blender": (2, 80, 0),
     "category": "UV",
 }
@@ -15,7 +15,7 @@ class MyAddonPreferences(bpy.types.AddonPreferences):
 
     folder_path: bpy.props.StringProperty(
         name="folder_path",
-        description="Ministy of Flatの存在するフォルダパスを入力してください",
+        description="Ministry of Flatの存在するフォルダパスを入力してください",
         subtype="DIR_PATH",
     )
 
@@ -25,7 +25,7 @@ class MyAddonPreferences(bpy.types.AddonPreferences):
 
 
 class AutoUV(bpy.types.Operator):
-    """Ministy of Flatを使って自動でUV展開を行います"""  # ホバー時に表示される説明文
+    """Ministry of Flatを使って自動でUV展開を行います"""  # ホバー時に表示される説明文
 
     bl_idname = "object.autouv"  # メニューのID、小文字でなければならない
     bl_label = "自動UV展開"  # UIにて表示される名前
