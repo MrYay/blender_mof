@@ -1,5 +1,6 @@
 import bpy
 import os
+import subprocess
 from bpy import context
 
 bl_info = {
@@ -47,7 +48,7 @@ class AutoUV(bpy.types.Operator):
             preferences.folder_path
         )  # Ministry of Flatがあるディレクトリを取得
         path = os.path.join(folder_path, "UnWrapConsole3.exe")
-        os.system(f"{path} {fn} {fn2}")  # 実行
+        subprocess.run([path, fn, fn2])  # 実行
         # STEP3-3 2で出力されたobjファイルをblenderにインポートする
         bpy.ops.wm.obj_import(filepath=fn2)
         # STEP3-4 1と2の一時ファイルを掃除する（消す）
